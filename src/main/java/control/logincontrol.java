@@ -9,12 +9,12 @@ import javax.servlet.annotation.*;
 import javax.validation.constraints.Email;
 import java.io.IOException;
 
-@WebServlet(name = "logincontrol", urlPatterns = {"/webapp/Login"})
+@WebServlet(name = "logincontrol", urlPatterns = {"/control/logincontrol"})
 public class logincontrol extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/webapp/Login.jsp");
-        dispatcher.forward(request, response);
+//        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/webapp/Login.jsp");
+//        dispatcher.forward(request, response);
     }
 //
     @Override
@@ -25,10 +25,10 @@ public class logincontrol extends HttpServlet {
         UsersDAO usersDAO = new UsersDAO();
         Users users = usersDAO.Login(email, password);
         if(users == null){
-            request.setAttribute("mess","Sai tài khoản hoặc mật khẩu");
+//            request.setAttribute("mess","Sai tài khoản hoặc mật khẩu");
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         }else {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            response.sendRedirect("index.jsp");
         }
     }
 }

@@ -22,15 +22,15 @@
         <div class="row justify-content-sm-center h-100">
             <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                 <div class="text-center my-5">
-                    <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100">
+                    <img src="images/CLMCAhome.jpg" alt="logo" width="100">
                 </div>
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
                         <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
-                        <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+                        <form method="post" class="needs-validation" novalidate="" autocomplete="off" action="signup">
                             <div class="mb-3">
-                                <label class="mb-2 text-muted" for="name">Name</label>
-                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+                                <label class="mb-2 text-muted" for="name">UserName</label>
+                                <input id="name" type="text" class="form-control" name="username" value="" required autofocus>
                                 <div class="invalid-feedback">
                                     Name is required
                                 </div>
@@ -47,6 +47,14 @@
                             <div class="mb-3">
                                 <label class="mb-2 text-muted" for="password">Password</label>
                                 <input id="password" type="password" class="form-control" name="password" required>
+                                <div class="invalid-feedback">
+                                    Password is required
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="password">RE_Password</label>
+                                <input id="re_password" type="password" class="form-control" name="re_password" required>
                                 <div class="invalid-feedback">
                                     Password is required
                                 </div>

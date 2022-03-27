@@ -1,5 +1,6 @@
 package dao;
 import model.Users;
+import Connection.DBconnection;
 
 import java.sql.*;
 
@@ -35,7 +36,8 @@ public class UsersDAO {
     {
         String query = "SELECT * FROM tai_khoan WHERE Email = ? AND password=?";
         try {
-            PreparedStatement pt = this.con.prepareStatement(query);
+            con = new DBconnection().getConnecttion();
+            PreparedStatement pt = con.prepareStatement(query);
             pt.setString(1, Email);
             pt.setString(2, password);
             rs = pt.executeQuery();
@@ -51,6 +53,43 @@ public class UsersDAO {
             e.printStackTrace();
         }
         return null;
+    }
+//    check account
+    public Users checkAccountExits(String username)
+    {
+        String query = "SELECT * FROM tai_khoan WHERE username = ?";
+        try {
+            con = new DBconnection().getConnecttion();
+            PreparedStatement pt = con.prepareStatement(query);
+            pt.setString(1, username);
+            rs = pt.executeQuery();
+    //
+            while(rs.next()){
+                return new Users(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+//    signup
+    public  void Signup(String username, String password){
+        String query = "INSERT INTO tai_khoan VALUE(?, ?, 0, 0)";
+        try {
+            con = new DBconnection().getConnecttion();
+            PreparedStatement pt = con.prepareStatement(query);
+            pt.setString(1, username);
+            pt.setString(2, password);
+            pt.executeUpdate();
+            //
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
