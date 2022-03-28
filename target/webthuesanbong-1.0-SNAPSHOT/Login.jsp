@@ -29,9 +29,10 @@
                     <div class="card-body p-5">
                         <h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
 <%--                        form login--%>
-                        <form method="post" class="needs-validation" action="control/logincontrol" novalidate="" autocomplete="off">
+                        <form method="post" class="needs-validation" action="login" autocomplete="off">
 <%--                            message--%>
                             <p class="text-danger">${mess}</p>
+
                             <div class="mb-3">
                                 <label class="mb-2 text-muted" for="email">E-Mail Address</label>
                                 <input id="email" type="email" class="form-control" name="email" value="" required autofocus>

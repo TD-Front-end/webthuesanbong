@@ -28,7 +28,7 @@
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
                         <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
-                        <form method="post" class="needs-validation" novalidate="" autocomplete="off" action="signup">
+                        <form method="post" class="needs-validation" autocomplete="off" action="signup">
                             <div class="mb-3">
                                 <label class="mb-2 text-muted" for="name">UserName</label>
                                 <input id="name" type="text" class="form-control" name="username" value="" required autofocus>
@@ -74,12 +74,12 @@
                     </div>
                     <div class="card-footer py-3 border-0">
                         <div class="text-center">
-                            Already have an account? <a href="index.html" class="text-dark">Login</a>
+                            Already have an account? <a href="Login.jsp" class="text-dark">Login</a>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-5 text-muted">
-                    Copyright &copy; 2022-2023 &mdash; Your Company
+                    Copyright &copy; 2022-2023 &mdash; HUTECH
                 </div>
             </div>
         </div>
