@@ -17,11 +17,11 @@ public class logincontrol extends HttpServlet {
 //
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email = request.getParameter("email");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
 //
         UsersDAO usersDAO = new UsersDAO();
-        Users users = usersDAO.Login(email, password);
+        Users users = usersDAO.Login(username, password);
         if(users == null){
             request.setAttribute("mess","Sai tài khoản hoặc mật khẩu");
             request.getRequestDispatcher("Login.jsp").forward(request, response);

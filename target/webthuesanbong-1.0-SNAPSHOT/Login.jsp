@@ -34,8 +34,8 @@
                             <p class="text-danger">${mess}</p>
 
                             <div class="mb-3">
-                                <label class="mb-2 text-muted" for="email">E-Mail Address</label>
-                                <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                <label class="mb-2 text-muted" for="username">Tài khoản</label>
+                                <input id="username" type="text" class="form-control" name="username" value="" required autofocus>
                                 <div class="invalid-feedback">
                                     Email is invalid
                                 </div>
@@ -43,9 +43,9 @@
 
                             <div class="mb-3">
                                 <div class="mb-2 w-100">
-                                    <label class="text-muted" for="password">Password</label>
+                                    <label class="text-muted" for="password">Mật khẩu</label>
                                     <a href="forgot.html" class="float-end">
-                                        Forgot Password?
+                                        Quển mật khẩu?
                                     </a>
                                 </div>
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-5 text-muted">
-                    Copyright &copy; 2022-2023 &mdash; Your Company
+                    Copyright &copy; 2022-2023 &mdash; HUTECH
                 </div>
             </div>
         </div>

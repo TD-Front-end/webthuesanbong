@@ -17,12 +17,16 @@ public class UsersDAO {
         boolean set = false;
         try{
             //Insert register data to database
-            String query = "insert into user(username,Email,password) values(?,?,?)";
+            String query = "insert into chusan(MaChuSan, TenChuSan, Sdt, DiaChi, UserName, Password, Email) values(?,?,?,?,?,?,?)";
 
             PreparedStatement pt = cons.prepareStatement(query);
-            pt.setString(1, user.getUsername());
-            pt.setString(2, user.getEmail());
-            pt.setString(3, user.getPassword());
+            pt.setInt(1, user.getMachusan());
+            pt.setString(2, user.getTenchusan());
+            pt.setString(3, user.getSdt());
+            pt.setString(4, user.getDiachi());
+            pt.setString(5, user.getUsername());
+            pt.setString(6, user.getPassword());
+            pt.setString(7, user.getEmail());
 
             pt.executeUpdate();
             set = true;
@@ -32,13 +36,13 @@ public class UsersDAO {
         return set;
     }
 //    login
-    public Users Login(String Email, String password)
+    public Users Login(String Username, String password)
     {
-        String query = "SELECT * FROM tai_khoan WHERE Email = ? AND password=?";
+        String query = "SELECT * FROM chusan WHERE UserName = ? AND PassWord=?";
         try {
             cons = new DBconnection().getConnecttion();
             PreparedStatement pt = cons.prepareStatement(query);
-            pt.setString(1, Email);
+            pt.setString(1, Username);
             pt.setString(2, password);
             rs = pt.executeQuery();
 //
@@ -46,7 +50,10 @@ public class UsersDAO {
                 return new Users(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
-                        rs.getString(4));
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7));
             }
 
         } catch (SQLException e) {
@@ -57,7 +64,7 @@ public class UsersDAO {
 //    check account
     public Users checkAccountExits(String username)
     {
-        String query = "SELECT * FROM tai_khoan WHERE username = ?";
+        String query = "SELECT * FROM chusan WHERE UserName = ?";
         try {
             cons = new DBconnection().getConnecttion();
             PreparedStatement pt = cons.prepareStatement(query);
@@ -68,7 +75,10 @@ public class UsersDAO {
                 return new Users(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
-                        rs.getString(4));
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7));
             }
 
         } catch (SQLException e) {
@@ -77,14 +87,18 @@ public class UsersDAO {
         return null;
     }
 //    signup
-    public  void Signup(String username, String password, String email){
-        String query = "INSERT INTO tai_khoan(username, email, password) VALUES(?, ?, ?)";
+    public  void Signup(int machusan, String tenchusan, String sdt, String diachi, String username, String password, String email){
+        String query = "INSERT INTO chusan(MaChuSan, TenChuSan, Sdt, DiaChi ,UserName, PassWord, Email) VALUES(?, ?, ?, ?, ?, ?, ?)";
         try {
             cons = new DBconnection().getConnecttion();
             PreparedStatement pt = cons.prepareStatement(query);
-            pt.setString(1, username);
-            pt.setString(2, email);
-            pt.setString(3, password);
+            pt.setInt(1, machusan);
+            pt.setString(2, tenchusan);
+            pt.setString(3, sdt);
+            pt.setString(4, diachi);
+            pt.setString(5, username);
+            pt.setString(6, password);
+            pt.setString(7, email);
             pt.executeUpdate();
             //7
 

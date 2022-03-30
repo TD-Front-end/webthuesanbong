@@ -13,7 +13,7 @@
     <meta name="author" content="Muhamad Nauval Azhar">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="This is a login page template based on Bootstrap 5">
-    <title>Bootstrap 5 Login Page</title>
+    <title>Register page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
@@ -27,37 +27,64 @@
                 </div>
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
-                        <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
+                        <h1 class="fs-4 card-title fw-bold mb-4">Đăng ký</h1>
                         <form method="post" class="needs-validation" autocomplete="off" action="signup">
                             <div class="mb-3">
-                                <label class="mb-2 text-muted" for="name">UserName</label>
-                                <input id="name" type="text" class="form-control" name="username" value="" required autofocus>
+                                <label class="mb-2 text-muted" for="machusan">Mã chủ sân</label>
+                                <input id="machusan" type="text" class="form-control" name="machusan" value="" required autofocus>
                                 <div class="invalid-feedback">
-                                    Name is required
+                                    vui lòng nhập đầy đủ thông tin
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="tenchusan">Tên chủ sân</label>
+                                <input id="tenchusan" type="text" class="form-control" name="tenchusan" value="" required autofocus>
+                                <div class="invalid-feedback">
+                                    vui lòng nhập đầy đủ thông tin
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="sdt">Số điện thoại</label>
+                                <input id="sdt" type="text" class="form-control" name="sdt" value="" required autofocus>
+                                <div class="invalid-feedback">
+                                    vui lòng nhập đầy đủ thông tin
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="diachi">Địa chỉ</label>
+                                <input id="diachi" type="text" class="form-control" name="diachi" value="" required autofocus>
+                                <div class="invalid-feedback">
+                                    vui lòng nhập đầy đủ thông tin
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="username">Tên tài Khoản</label>
+                                <input id="username" type="text" class="form-control" name="username" value="" required autofocus>
+                                <div class="invalid-feedback">
+                                    vui lòng nhập đầy đủ thông tin
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+                                <label class="mb-2 text-muted" for="password">Mật khẩu</label>
+                                <input id="password" type="password" class="form-control" name="password" required>
+                                <div class="invalid-feedback">
+                                    vui lòng nhập đầy đủ thông tin
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="re_password">Nhập lại mật khẩu</label>
+                                <input id="re_password" type="password" class="form-control" name="re_password" required>
+                                <div class="invalid-feedback">
+                                    vui lòng nhập đầy đủ thông tin
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="email">EMail Address</label>
                                 <input id="email" type="email" class="form-control" name="email" value="" required>
                                 <div class="invalid-feedback">
                                     Email is invalid
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="mb-2 text-muted" for="password">Password</label>
-                                <input id="password" type="password" class="form-control" name="password" required>
-                                <div class="invalid-feedback">
-                                    Password is required
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="mb-2 text-muted" for="password">RE_Password</label>
-                                <input id="re_password" type="password" class="form-control" name="re_password" required>
-                                <div class="invalid-feedback">
-                                    Password is required
                                 </div>
                             </div>
 

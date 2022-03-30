@@ -17,10 +17,14 @@ public class ServletSignup extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int machusan = Integer.parseInt(request.getParameter("machusan"));
+        String tenchusan = request.getParameter("tenchusan");
+        String sdt = request.getParameter("sdt");
+        String diachi = request.getParameter("diachi");
         String username = request.getParameter("username");
-        String email = request.getParameter("email");
         String password = request.getParameter("password");
         String re_password = request.getParameter("re_password");
+        String email = request.getParameter("email");
 //
         if(!password.equals(re_password)){
             response.sendRedirect("Login.jsp");
@@ -29,7 +33,7 @@ public class ServletSignup extends HttpServlet {
             Users users = usersDAO.checkAccountExits(username);
             if(users == null){
 //                dc signup
-                usersDAO.Signup(username, password, email);
+                usersDAO.Signup(machusan, tenchusan, sdt, diachi,username, password, email);
                 response.sendRedirect("index.jsp");
 
             }else {
